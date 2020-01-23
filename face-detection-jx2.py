@@ -9,7 +9,7 @@ face_cascade = cv2.CascadeClassifier(
     )
 
 # initialize the broker
-broker = " test.mosquitto.org"
+broker = "mosquitto"
 
 def on_publish(client, message, result):
     print("message was published")
@@ -24,7 +24,7 @@ counter = 0
 samples = 10
 
 # define a topic
-topic = "faces"
+topic = "hw3"
 
 while(counter < samples):
     # capture frame-by-frame
