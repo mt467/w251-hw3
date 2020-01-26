@@ -1,11 +1,11 @@
 # HW3-Internet of Things 101
 
-##How to set up Jetson TX2
-__ Build Docker Images for Face Detection and MQTT__
+## How to set up Jetson TX2
+__Build Docker Images for Face Detection and MQTT__
 
-__Build 
+__Build Network Bridge__
 
-##How to set up ibm cloud server
+## How to set up ibm cloud server
 __Create a new ibm cloud virtual server__
 
 Create a VSI using the gui (using the ssh key imported from HW2)
