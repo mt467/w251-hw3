@@ -69,8 +69,8 @@ We have 2 docker containers on the cloud, one for mosquitto client and the other
 
 First, I created docker images from docker files:
 
-    docker build -t mosquitto -f mymosquitto.dockerfile .
-    docker build -t imageprocessor -f imageprocessor.dockerfile .
+    docker build -t mosquitto -f dockerfile .
+    
 Then build a docker network to tie up them:
 
     docker network create --driver bridge hw03
@@ -84,8 +84,20 @@ Will leave this running then in another terminal run:
      # now inside the container
      python3 imageprocessor.py
      
+Now the ibm cloud is ready, let's back to jetson to run showcamera container
 
+## Back to Jetson
 
+Before images can be captured by camera, I ran "xhost +" to allow the container to see the webcam device
+
+    xhost +
+    docker run -e DISPLAY=$DISPLAY --net=host --privileged --v "$PWD":/hw3 -ti showcamera sh
+    #now inside the container
+    python3 showcamera.py
+    
+Now look at the camera and say cheese! vola!! the face images were in the w205-hw3 bucket:
+
+![bucket](bucket.png)
 
 
 
