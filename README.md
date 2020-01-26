@@ -1,11 +1,13 @@
 # HW3-Internet of Things 101
 
 ## How to set up Jetson TX2
+
 __Build Docker Images for Face Detection and MQTT__
 
 __Build Network Bridge__
 
 ## How to set up ibm cloud server
+
 __Create a new ibm cloud virtual server__
 
 Create a VSI using the gui (using the ssh key imported from HW2)
@@ -24,9 +26,22 @@ Create a VSI using the gui (using the ssh key imported from HW2)
     Your Virtual Machine (also called a Virtual Server Instance) will appear in the portal
     
 __Create an object storage bucket__
+
 First created a cloud storage object using the default setting via gui, then created "w205-hw3" (please don't mind w205, lol)  bucket inside it following by creating credentials for the bucket. Set the bucket access to public. 
 
 __Mount Object Storage to VSI
+
+I followed the week2/lab2 instruction to mount my w205-hw3 bucket to /mnt/mybucket on VSI.
+
+sudo apt-get update
+sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+cd s3fs-fuse
+./autogen.sh
+./configure
+make
+sudo make install
+
 
 __Install Docker on VSI__
 
