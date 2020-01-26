@@ -93,6 +93,7 @@ Before images can be captured by camera, I ran "xhost +" to allow the container 
     xhost +
     docker run -e DISPLAY=$DISPLAY --net=host --privileged --v "$PWD":/hw3 -ti showcamera sh
     #now inside the container
+    cd hw3
     python3 showcamera.py
     
 Then connected the camera and pointed at my face! 
