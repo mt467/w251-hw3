@@ -29,8 +29,12 @@ Once the dockerfiles are built, create a network to tie the containers:
  
     docker run --name forwarder --network hw03 --v "$PWD":/hw3 -ti forwarder sh
 
-I also made sure that port 1883 is open on my jetson.
+I also made sure that port 1883 is open on my jetson:
 
+    sudo ufw status 
+    sudo ufw allow 1883/tcp
+    
+So now let's go and set up our ibm cloud, will come back to run imageprocessor container later.
 
 ## How to Set Up IBM Cloud Server
 
