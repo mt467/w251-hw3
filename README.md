@@ -33,16 +33,35 @@ __Mount Object Storage to VSI
 
 I followed the week2/lab2 instruction to mount my w205-hw3 bucket to /mnt/mybucket on VSI.
 
-sudo apt-get update
-sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
-git clone https://github.com/s3fs-fuse/s3fs-fuse.git
-cd s3fs-fuse
-./autogen.sh
-./configure
-make
-sudo make install
+Step1: Install required packages
 
+    sudo apt-get update
+    sudo apt-get install automake autotools-dev g++ git libcurl4-openssl-dev libfuse-dev libssl-dev libxml2-dev make pkg-config
+    git clone https://github.com/s3fs-fuse/s3fs-fuse.git
+    cd s3fs-fuse
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
 
+Step2: Get credential for the bucket. Service credentials> click on "View credentials" > cos_hmac_keys
+We need access_key_id:secrect_access_key:
+
+    echo "e6207xxxxxxxxxxxx:837f58bd107b2f450ba2a16c19d0029956b9exxxxxxxxxx" > $HOME/.cos_creds
+    sudo s3fs w205-hw3 /mnt/mybucket -o passwd_file=$HOME/.cos_creds -o sigv2 -o use_path_request_style -o url=https://s3.us-   south.cloud-object-storage.appdomain.cloud
+    
+    vi .s3cfg
+Step3: Change the config file
+
+    access_key=e6207xxxxxxxxxxxxxx
+    secret_key=837f58bd107b2fxxxxxxxxxxxxxxxxxxxxx
+    gpg_command = /usr/local/bin/gpg
+    # host_base = s3.private.us-south.cloud-object-storage.appdomain.cloud
+    # host_bucket = %(bucket)s.s3.private.us-south.cloud-object-storage.appdomain.cloud
+    host_base = https://s3.us-south.cloud-object-storage.appdomain.cloud
+    host_bucket = https://w205-hw3.s3.us-south.cloud-object-storage.appdomain.cloud
+    use_https = True
+    
 __Install Docker on VSI__
 
 __Build and Run a Docker for Image processing__
