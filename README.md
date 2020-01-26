@@ -117,7 +117,7 @@ Now the ibm cloud is ready, let's back to jetson to run showcamera container
 Before images can be captured by camera, I ran "xhost +" to allow the container to see the webcam device
 
     xhost +
-    docker run -e DISPLAY=$DISPLAY --net=host --privileged --v "$PWD":/hw3 -ti showcamera sh
+    docker run --name showcamera -e DISPLAY=$DISPLAY --network=hw3 --privileged --v "$PWD":/hw3 -ti showcamera sh
     #now inside the container
     cd hw3
     python3 showcamera.py
