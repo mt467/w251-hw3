@@ -95,7 +95,8 @@ Before images can be captured by camera, I ran "xhost +" to allow the container 
     #now inside the container
     python3 showcamera.py
     
-Now look at the camera and say cheese! vola!! the face images were in the w205-hw3 bucket:
+Then connected the camera and pointed at my face! 
+Vola!! the face images were in the w205-hw3 bucket:
 
 ![bucket](bucket.png)
 
