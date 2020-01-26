@@ -98,6 +98,8 @@ Before images can be captured by camera, I ran "xhost +" to allow the container 
 Then connected the camera and pointed at my face! 
 Vola!! the face images were in the w205-hw3 bucket:
 
+https://cloud.ibm.com/objectstorage/crn%3Av1%3Abluemix%3Apublic%3Acloud-object-storage%3Aglobal%3Aa%2F2c6cdbca95e2411db1bf75a941e5d012%3Ab8c064f1-569c-431f-9ee1-1a9ac51e9b70%3A%3A?bucket=w205-hw3&bucketRegion=us-south&endpoint=s3.us-south.cloud-object-storage.appdomain.cloud&paneId=bucket_overview
+
 ![bucket](bucket.png)
 
 
