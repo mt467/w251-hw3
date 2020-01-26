@@ -97,7 +97,7 @@ Before images can be captured by camera, I ran "xhost +" to allow the container 
     
 Now look at the camera and say cheese! vola!! the face images were in the w205-hw3 bucket:
 
-![bucket](Screen Shot 2020-01-26 at 12.44.30 PM.png)
+![bucket](bucket.png)
 
 
 
