@@ -1,10 +1,36 @@
 # HW3-Internet of Things 101
 
+__HW Summary__
+
+In this homowork, I built an IoT application pipeline using "edge" device, Jetson TX2 and an IBM Cloud server. I used an MQTT broker-client architecture to store captured frames of a webcam to ibm object storage.
+
 ## How to set up Jetson TX2
+
+The Jetson TX2 was set up in HW1. Therefore, the docker is ready to use.
+
 
 __Build Docker Images for Face Detection and MQTT__
 
+Created docker containers for showcamera and mosquittos
+
+    docker build -t showcamera -f dockerfile .
+    
+
 __Build Network Bridge__
+
+Once the dockerfiles are built, create a network to tie the containers:
+
+    docker network create --driver bridge hw03
+    docker run --name mosquitto --network hw03 -p 1883:1883 -ti broker sh
+    # in the container now, spin up mosquitto broker
+    /usr/sbin/mosquitto
+ 
+ Left this running in another terminal:
+ 
+    docker run --name forwarder --network hw03 --v "$PWD":/hw3 -ti forwarder sh
+
+I also made sure that port 1883 is open on my jetson.
+
 
 ## How to Set Up IBM Cloud Server
 
