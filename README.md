@@ -28,6 +28,8 @@ Once the dockerfiles are built, create a network to tie the containers:
  Left this running in another terminal:
  
     docker run --name forwarder --network hw03 --v "$PWD":/hw3 -ti forwarder sh
+    # inside the container, run the script
+    python3 forwarder.py
 
 I also made sure that port 1883 is open on my jetson:
 
