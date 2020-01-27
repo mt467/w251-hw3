@@ -131,6 +131,8 @@ Before images can be captured by camera, I ran "xhost +" to allow the container 
 Then connected the camera and pointed at my face! 
 
 ![camera](face_073067.png) 
+
+
 Vola!! the face images were in the w205-hw3 bucket:
 
 https://w205-hw3.s3.us-south.cloud-object-storage.appdomain.cloud/
