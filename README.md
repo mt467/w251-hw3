@@ -2,7 +2,7 @@
 
 __HW Summary__
 
-In this homowork, I built an IoT application pipeline using "edge" device, Jetson TX2 and an IBM Cloud server. I used an MQTT broker-client architecture to store captured frames of a webcam to ibm object storage.
+In this homowork, I built an IoT application pipeline using "edge" device, Jetson TX2 and an IBM Cloud server. I used an MQTT broker-client architecture to store captured frames of a webcam to ibm object storage. The MQTT topic is "hw3" and MQTT QoS is 0, because this is an applciation that I monitored and it is not mission critical if we lose a few images!
 
 ## How to set up Jetson TX2
 
